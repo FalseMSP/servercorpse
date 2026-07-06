@@ -1,0 +1,38 @@
+{
+        "schemaVersion": 1,
+        "id": "servercorpse",
+        "version": "${version}",
+        "name": "ServerCorpse",
+        "description": "Spawns a Mannequin corpse on player death, with a summoning-circle revival ritual and a hardcore spectator leash that prevents dead players from wandering more than 2 chunks from their corpse.",
+        "authors": [
+                "Me!"
+        ],
+        "contact": {
+                "homepage": "https://fabricmc.net/",
+                "sources": "https://github.com/FabricMC/fabric-example-mod"
+        },
+        "license": "CC0-1.0",
+        "icon": "assets/servercorpse/icon.png",
+        "environment": "*",
+        "entrypoints": {
+                "main": [
+                        "com.redsmods.ServerCorpse"
+                ],
+                "client": [
+                        "com.redsmods.client.ServerCorpseClient"
+                ]
+        },
+        "mixins": [
+                "servercorpse.mixins.json",
+                {
+                        "config": "servercorpse.client.mixins.json",
+                        "environment": "client"
+                }
+        ],
+        "depends": {
+                "fabricloader": ">=0.19.3",
+                "minecraft": "~26.2",
+                "java": ">=25",
+                "fabric-api": "*"
+        }
+}
